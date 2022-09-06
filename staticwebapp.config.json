@@ -4,6 +4,10 @@
         {
             "route": "/*",
             "allowedRoles": ["authenticated"]
+        },
+        {
+            "route": "/.auth/login/twitter",
+            "statusCode": 404
         }
     ],
     "auth": {
