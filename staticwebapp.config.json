@@ -3,23 +3,9 @@
     "routes": [
         {
             "route": "/*",
-            "allowedRoles": [
-                "authenticated"
-            ]
+            "allowedRoles": ["authenticated"]
         }
     ],
-    "navigationFallback": {
-        "rewrite": "/index.html"
-    },
-    "responseOverrides": {
-        "401": {
-            "statusCode": 302,
-            "redirect": "/.auth/login/aad"
-        }
-    },
-    "globalHeaders": {
-        "content-security-policy": "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'"
-    },
     "auth": {
         "identityProviders": {
             "azureActiveDirectory": {
@@ -30,5 +16,17 @@
                 }
             }
         }
+    },
+    "navigationFallback": {
+        "rewrite": "/index.html"
+    },
+    "responseOverrides": {
+        "401": {
+            "statusCode": 302,
+            "redirect": "/.auth/login/azureActiveDirectory"
+        }
+    },
+    "globalHeaders": {
+        "content-security-policy": "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'"
     }
 }
