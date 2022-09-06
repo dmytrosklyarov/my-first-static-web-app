@@ -8,14 +8,13 @@
     ],
     "auth": {
         "identityProviders": {
-          "azureActiveDirectory": {
-            "userDetailsClaim": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
-            "registration": {
-              "openIdIssuer": "https://login.microsoftonline.com/c560f072-1e9c-410b-92f9-dd03a8d149b7",
-              "clientIdSettingName": "AZURE_CLIENT_ID",
-              "clientSecretSettingName": "AZURE_CLIENT_SECRET"
+            "azureActiveDirectory": {
+                "registration": {
+                    "openIdIssuer": "https://login.microsoftonline.com/c560f072-1e9c-410b-92f9-dd03a8d149b7/v2.0",
+                    "clientIdSettingName": "AZURE_CLIENT_ID",
+                    "clientSecretSettingName": "AZURE_CLIENT_SECRET"
+                }
             }
-          }
         }
     },
     "navigationFallback": {
