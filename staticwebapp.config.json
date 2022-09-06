@@ -27,7 +27,7 @@
     "responseOverrides": {
         "401": {
             "statusCode": 302,
-            "redirect": "/.auth/login/azureActiveDirectory"
+            "redirect": "/.auth/login/aad"
         }
     },
     "globalHeaders": {
