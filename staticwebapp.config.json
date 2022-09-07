@@ -13,6 +13,11 @@
                     "openIdIssuer": "https://login.microsoftonline.com/c560f072-1e9c-410b-92f9-dd03a8d149b7/v2.0",
                     "clientIdSettingName": "AZURE_CLIENT_ID",
                     "clientSecretSettingName": "AZURE_CLIENT_SECRET"
+                },
+                "login": {
+                  "loginParameters": [
+                    "scope=api://09d72492-68b8-4f66-9bd8-8fa237c465c6/Events.Manage"
+                  ]
                 }
             }
         }
