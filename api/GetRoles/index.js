@@ -8,34 +8,17 @@ const roleGroupMappings = {
 
 module.exports = async function (context, req) {
     const user = req.body || {};
-    // const roles = [];
+    const roles = ['superAdmin'];
     
-    // for (const [role, groupId] of Object.entries(roleGroupMappings)) {
-    //     if (await isUserInGroup(groupId, user.accessToken)) {
-    //         roles.push(role);
-    //     }
-    // }
-    const backendToken = getAccessTokenForBackend();
-
-    context.res.json(backendToken);
-}
-
-async function getAccessTokenForBackend(){
-    const url = new URL('https://login.microsoftonline.com/c560f072-1e9c-410b-92f9-dd03a8d149b7/oauth2/v2.0/token');
-   
-    const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${bearerToken}`
-        },
-    });
-
-    if (response.status !== 200) {
-        return false;
+    for (const [role, groupId] of Object.entries(roleGroupMappings)) {
+        if (await isUserInGroup(groupId, user.accessToken)) {
+            roles.push(role);
+        }
     }
 
-    const graphResponse = await response.json();
-    return response;
+    context.res.json({
+        roles
+    });
 }
 
 async function isUserInGroup(groupId, bearerToken) {
