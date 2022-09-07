@@ -16,7 +16,7 @@
                 },
                 "login": {
                   "loginParameters": [
-                    "scope=openid+profile+email+offline_access+api://09d72492-68b8-4f66-9bd8-8fa237c465c6/user_impersonation"
+                    "scope=openid profile email offline_access api://09d72492-68b8-4f66-9bd8-8fa237c465c6/user_impersonation"
                   ]
                 }
             }
